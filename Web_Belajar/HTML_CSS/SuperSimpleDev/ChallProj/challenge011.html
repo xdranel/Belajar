@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Challenge 011</title>
+    <link href="css/challenge011.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div style="display: grid; grid-template-columns: 200px 75px">
+      <div style="background-color: lightblue">200px</div>
+      <div style="background-color: lightpink">75px</div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 50px 1fr 75px">
+      <div style="background-color: lightblue">50px</div>
+      <div style="background-color: lightpink">1fr</div>
+      <div style="background-color: lightblue">75px</div>
+    </div>
+
+    <div
+      style="
+        display: grid;
+        grid-template-columns: 100px 100px 100px 100px;
+        column-gap: 50px;
+        row-gap: 25px;
+      "
+    >
+      <div style="background-color: lightblue">50px</div>
+      <div style="background-color: lightpink">50px</div>
+      <div style="background-color: lightblue">50px</div>
+      <div style="background-color: lightpink">50px</div>
+
+      <div style="background-color: lightblue">50px</div>
+      <div style="background-color: lightpink">50px</div>
+      <div style="background-color: lightblue">50px</div>
+      <div style="background-color: lightpink">50px</div>
+    </div>
+
+    <br />
+    <br />
+    <br />
+
+    <div class="friend-recomended" id="">
+      <div class="profile">
+        <img class="user-profile" src="images/cat.jpg" alt="" />
+        <p class="user-name">Oliver</p>
+
+        <div class="mutual-friends-row">
+          <img class="mutual-pict" src="images/dog2.jpg" alt="" />
+          <p class="mutual-friends">2 mutual friends</p>
+        </div>
+        <button class="add-friend">Add Friend</button>
+      </div>
+
+      <div class="profile">
+        <img class="user-profile" src="images/cat2.jpg" alt="" />
+        <p class="user-name">Mimi</p>
+
+        <div class="mutual-friends-row">
+          <img class="mutual-pict" src="images/dog2.jpg" alt="" />
+          <p class="mutual-friends">3 mutual friends</p>
+        </div>
+        <button class="add-friend">Add Friend</button>
+      </div>
+
+      <div class="profile">
+        <img class="user-profile" src="images/dog.jpg" alt="" />
+        <p class="user-name">Rex</p>
+
+        <div class="mutual-friends-row">
+          <img class="mutual-pict" src="images/dog2.jpg" alt="" />
+          <p class="mutual-friends">4 mutual friends</p>
+        </div>
+        <button class="add-friend">Add Friend</button>
+      </div>
+    </div>
+  </body>
+</html>

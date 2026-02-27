@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Challenge 07</title>
+  <link href="css/calculator.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="displayText">
+    <p class="js-displayCalculation"></p>
+  </div>
+
+  <div class="calculator">
+    <div class="firstRow">
+      <button onclick="math('1');" class="designButton">1</button>
+      <button onclick="math('2');" class="designButton">2</button>
+      <button onclick="math('3');" class="designButton">3</button>
+      <button onclick="math(' + ');" class="designButton operButton">+</button>
+    </div>
+
+    <div class="secondRow">
+      <button onclick="math('4');" class="designButton">4</button>
+      <button onclick="math('5');" class="designButton">5</button>
+      <button onclick="math('6');" class="designButton">6</button>
+      <button onclick="math(' - ');" class="designButton operButton">-</button>
+    </div>
+
+    <div class="thirdRow">
+      <button onclick="math('7');" class="designButton">7</button>
+      <button onclick="math('8');" class="designButton">8</button>
+      <button onclick="math('9');" class="designButton">9</button>
+      <button onclick="math(' * ');" class="designButton operButton">*</button>
+    </div>
+
+    <div class="fourthRow">
+      <button onclick="math('0');" class="designButton">0</button>
+      <button onclick="math('.');" class="designButton">.</button>
+      <button onclick="calculate(calculation);" class="designButton">=</button>
+      <button onclick="math(' / ');" class="designButton operButton">/</button>
+    </div>
+
+    <div class="fifthRow">
+      <button onclick="clearCalculation();" class="designButton">Clear</button>
+    </div>
+  </div>
+
+  <a href="dom.html">Back To Main Page</a>
+
+  <script src="scripts/calculator.js"></script>
+</body>
+
+</html>

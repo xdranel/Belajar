@@ -1,0 +1,39 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.todoGrid,
+.todoInputGrid {
+  display: grid;
+  grid-template-columns: 200px 160px 100px;
+  column-gap: 10px;
+  row-gap: 10px;
+}
+
+.todoInputGrid {
+  margin-bottom: 10px;
+}
+
+.todoGrid {
+  align-items: center;
+}
+
+.designInput {
+  padding: 10px 5px;
+  font-size: 16px;
+}
+
+.designButton {
+  border: none;
+  padding: 13px 30px;
+  color: white;
+  cursor: pointer;
+}
+
+.addTodoButton {
+  background-color: rgb(0, 180, 0);
+}
+
+.deleteTodoButton {
+  background-color: rgb(180, 0, 0);
+}

@@ -1,0 +1,115 @@
+.thumbnail{
+  width: 200px;
+  border-radius: 15px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+}
+.thumbnailone{
+  width: 200px;
+  height: 200px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+  object-fit: cover;
+  object-position: center;
+}
+.thumbnailtwo{
+  width: 200px;
+  height: 200px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+  border-radius: 100px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.inputone{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-color: grey;
+  border-width: 1px;
+  border-radius: 7px;
+  border-style: solid;
+}
+
+.inputtwo{
+  width: 400px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.emails{
+  font-family: Arial;
+}
+.email{
+  color: rgb(96, 96, 96);
+  margin-bottom: 5px;
+}
+.inputthree{
+  width: 400px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  border-color: rgb(128, 128, 128);
+  border-width: 2px;
+  border-radius: 3px;
+  border-style: solid;
+}
+.policy{
+  color: rgb(96, 96, 96);
+  font-size: 16px;
+}
+.agree{
+  width: 400px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  background-color: rgb(0, 125, 200);
+  border: none;
+  font-size: 20px;
+  border-radius: 30px;
+  color: white;
+  text-align: center;
+  align-content: center;
+}
+
+.twitter{
+}
+.user-pf{
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50px;
+  border-color: rgb(128, 128, 128);
+  border-width: 1px;
+  border-style: solid;
+  vertical-align: middle;
+}
+.teks{
+  border: none;
+  font-size: 14px;
+  color: rgb(96, 96, 96);
+  width: 300px;
+  vertical-align: middle;
+}
+.tweet-but{
+  background-color: rgb(0, 125, 200);
+  border: none;
+  border-radius: 20px;
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 14px;
+  font-weight: bold;
+  vertical-align: middle;
+}

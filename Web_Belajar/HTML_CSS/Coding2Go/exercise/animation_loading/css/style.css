@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+
+.loading {
+    height: 50px;
+    width: 50px;
+
+    border: 6px solid aqua;
+    border-radius: 4px;
+    box-shadow: 0 0 8px aqua, 0 0 8px aqua inset;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+
+    animation: 2s loading ease-in-out infinite;
+}
+
+@keyframes loading {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+
+    33% {
+         transform: rotateX(180deg) rotateY(0deg) rotateZ(0deg);
+    }
+
+    67% {
+        transform: rotateX(180deg) rotateY(180deg) rotateZ(0deg);
+    }
+
+    100% {
+        transform: rotateX(180deg) rotateY(180deg) rotateZ(180deg);
+    }
+}

@@ -1,0 +1,110 @@
+SISTEM BASIS DATA
+
+# Before Indexing #
+
+Point #3 :
+=> Query 1 : name , phone_numb = customers => 2s 208ms
+SELECT name, phone_numb
+FROM customers;
+
+=> Query 2 : product_name , product_category , product_description = products => 4s 899ms
+SELECT product_name, product_category, product_description
+FROM product;
+
+=> Query 3 : product_name , price = products => 2s 452ms
+SELECT product_name, price
+FROM product
+WHERE price >= 5000000 AND price <= 30000000;
+
+
+Point #4 :
+=> Query 1 : customer_id , name = customers => 2s 351ms
+SELECT customer_id, name
+FROM customers;
+
+=> Query 2 : order_id , customer_id = orders => 3s 773ms
+SET @sort_by = null;
+SELECT order_id, customer_id
+FROM orders
+ORDER BY CASE
+             WHEN @sort_by = 'customer_id' THEN customer_id
+             ELSE order_id
+             END;
+
+Point #5 :
+=> Query 1 : name , product_name = customers join products => 1m 19s 934ms
+SELECT c.name AS customer_name,
+       p.product_name
+FROM customers c
+         JOIN
+     orders o ON c.customer_id = o.customer_id
+         JOIN
+     order_details od ON o.order_id = od.order_id
+         JOIN
+     product p ON od.product_id = p.product_id;
+
+
+# After Indexing #
+
+Point #3 :
+
+=> Query 1 : name , phone_numb = customers => 2s 434ms
+SELECT name, phone_numb
+FROM customers;
+
+Index : phone_numb = idx_phone_numb => 4s 124ms
+CREATE INDEX idx_phone_numb ON customers (phone_numb);
+
+
+=> Query 2 : product_name , product_category , product_description = products => 4s 331ms
+SELECT product_name, product_category, product_description
+FROM product;
+
+Index : product_category = idx_product_category => 3s 590ms
+CREATE INDEX idx_product_category ON product (product_category);
+
+
+=> Query 3 : product_name , price = products => 2s 83ms
+SELECT product_name, price
+FROM product
+WHERE price >= 5000000 AND price <= 30000000;
+
+Index : price = idx_price => 2s 536ms
+CREATE INDEX idx_price ON product (price);
+
+
+Point #4 :
+=> Query 1 : customer_id , name = customers => 2s 287ms
+SELECT customer_id, name
+FROM customers;
+
+Index : name = idx_name => 4s 456ms
+CREATE INDEX idx_name ON customers (name);
+
+
+=> Query 2 : order_id , customer_id = orders => 3s 773ms
+SET @sort_by = null;
+SELECT order_id, customer_id
+FROM orders
+ORDER BY CASE
+             WHEN @sort_by = 'customer_id' THEN customer_id
+             ELSE order_id
+             END;
+
+
+Point #5 :
+=> Query 1 : name , product_name = customers join products => 1m 12s 972ms
+SELECT c.name AS customer_name,
+       p.product_name
+FROM customers c
+         JOIN
+     orders o ON c.customer_id = o.customer_id
+         JOIN
+     order_details od ON o.order_id = od.order_id
+         JOIN
+     product p ON od.product_id = p.product_id;
+
+Index : name = idx_name => 4s 456ms
+CREATE INDEX idx_name ON customers (name);
+Index : product_name = idx_product_name => 6s 734ms
+CREATE INDEX idx_product_name ON product (product_name);

@@ -1,0 +1,166 @@
+.p {
+  font-family: Arial;
+}
+
+.square {
+  background-color: red;
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+}
+.round {
+  background-color: green;
+  border-radius: 100px;
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+}
+
+.service-content {
+  width: 300px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(200, 200, 200);
+  padding-left: 15px;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+}
+
+.youtube-popup {
+  width: 420px;
+  background-color: rgb(50, 50, 50);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 30px;
+}
+.install {
+  font-weight: bold;
+  font-size: 22px;
+  color: white;
+  margin-bottom: 10px;
+}
+.add {
+  color: rgb(180, 180, 180);
+}
+
+.twitter {
+  width: 450px;
+  border-radius: 7px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  padding-right: 10px;
+  margin-bottom: 30px;
+}
+.user-pf {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50px;
+  border-color: rgb(128, 128, 128);
+  border-width: 1px;
+  border-style: solid;
+  vertical-align: middle;
+}
+.teks {
+  border: none;
+  font-size: 14px;
+  color: rgb(96, 96, 96);
+  width: 300px;
+  vertical-align: middle;
+}
+.tweet-but {
+  background-color: rgb(0, 125, 200);
+  border: none;
+  border-radius: 20px;
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 14px;
+  font-weight: bold;
+  vertical-align: middle;
+}
+
+.friend-recomended {
+  display: inline-block;
+  margin-bottom: 50px;
+}
+.first,
+.two,
+.three {
+  display: inline-block;
+  margin-right: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.user-profileone {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+  vertical-align: middle;
+}
+.user-name {
+  font-weight: bold;
+  padding-left: 10px;
+  cursor: pointer;
+}
+.mutual-friends {
+  padding-left: 10px;
+  color: grey;
+  cursor: pointer;
+}
+.add-friend {
+  font-size: 14px;
+  background-color: rgb(0, 125, 200);
+  border-radius: 3px;
+  border: none;
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.search {
+  text-align: center;
+}
+.logo {
+  margin-bottom: 10px;
+}
+.google-logo {
+  width: 300px;
+}
+.search-box {
+  margin-bottom: 30px;
+}
+.search-bar {
+  font-family: Arial;
+  font-size: 14px;
+  width: 450px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+.searching,
+.lucky {
+  background-color: rgb(230, 230, 230);
+  border: none;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-right: 10px;
+}

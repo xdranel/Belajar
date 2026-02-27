@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Head Or Tail</title>
+  <link href="" rel="stylesheet">
+
+  <style>
+    .htGame {
+      margin-bottom: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="htGame">
+    <h2>Head or Tails</h2>
+    <h2>Guess The Coin</h2>
+
+    <div class="playButton">
+      <button onclick="playgame('Head')">Head</button>
+      <button onclick="playgame('Tail')">Tail</button>
+    </div>
+
+    <div class="info">
+      <p class="js-moveInfo"></p>
+      <p class="js-resultInfo"></p>
+      <p class="js-scoreInfo"></p>
+    </div>
+
+    <div class="extraButton">
+      <button onclick="resetgame()">Reset Score</button>
+    </div>
+  </div>
+
+  <a href="dom.html">Back To Main Page</a>
+
+  <script src="scripts/headtails.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    padding: 50px;
+    position: relative;
+}
+
+h1 {
+    position: relative;
+    width: max-content;
+}
+
+h1::after {
+    content: "";
+    background: linear-gradient(to right, red, blue);
+
+    width: 0;
+
+    transition: 200ms;
+}
+
+h1:hover::after {
+    height: 4px;
+    width: 100%;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    z-index: 10;
+}

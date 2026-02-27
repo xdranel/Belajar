@@ -1,0 +1,7 @@
+# Ignore Folder
+**/confusion/
+**/Confusion/
+**/vendor
+
+# Ignore File
+*.php-cs-fixer.Cache

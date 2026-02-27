@@ -1,0 +1,98 @@
+body {
+  background-color: rgb(20, 20, 20);
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* General Style */
+.sec-rps {
+  margin-bottom: 50px;
+}
+
+.title-rps {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/* Main Button */
+.sec-rpsButton {
+  display: flex;
+  justify-content: center;
+}
+
+.rockButton,
+.paperButton,
+.scissorsButton {
+  background-color: rgb(20, 20, 20);
+
+  border: none;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 5px;
+  border-color: rgb(255, 255, 255);
+
+  padding: 0;
+
+  margin-right: 20px;
+
+  width: 150px;
+  height: 150px;
+
+  cursor: pointer;
+}
+
+.moveIcon {
+  display: block;
+  margin: 0 auto;
+
+  background-color: rgb(20, 20, 20);
+
+  border: none;
+  border-radius: 50%;
+
+  width: 50px;
+  height: 50px;
+}
+
+/* Info Style */
+.sec-infoStats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rpsResult,
+.rpsMove {
+  font-weight: bold;
+  font-size: 30px;
+  margin-bottom: 0;
+}
+
+.moveTypeicon {
+  width: 40px;
+  height: 40px;
+}
+
+/* Bottom Button*/
+.sec-botButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.resetButton,
+.autoPlayButton {
+  border: none;
+  background-color: white;
+  color: black;
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 20px;
+  gap: 10px;
+  margin: 10px;
+  cursor: pointer;
+}

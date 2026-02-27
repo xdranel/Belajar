@@ -1,0 +1,84 @@
+  p{
+    font-family: Arial;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .fiveE{
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .new-text{
+    color: red;
+    margin-bottom: 10px;
+  }
+  .mac-text{
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .super-text{
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+  .from-text{
+    margin-bottom: 10px;
+  }
+  .buy-but{
+    background-color: rgb(10, 150, 200);
+    color: white;
+    border: none;
+    border-radius: 21px;
+    font-weight: bold;
+    font-size: 14px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .fiveF{
+    margin-bottom: 20px;
+  }
+  .stock-price{
+    font-size: 25px;
+    margin-bottom: 5px;
+  }
+  .stock-usd{
+    color: rgb(96, 96, 96);
+    font-size: 15px;
+  }
+  .percentage-now{
+    color: rgb(0, 200, 30);
+    margin-bottom: 5px;
+  }
+  .percentage-predicted{
+    color: rgb(96, 96, 96);
+  }
+  .percentage-predicted-red{
+    color: red;
+  }
+
+  .fiveG{
+
+  }
+  .username{
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  .user-realname{
+    font-weight: normal;
+    color: rgb(96, 96, 96);
+  }
+  .user-message{
+    width: 560px;   
+    margin-bottom: 20px;
+    line-height: 25px;
+  }
+  .user-message-two{
+    margin-bottom: 10px;
+  }
+  .user-mention{
+    color: rgb(10, 150, 200);
+  }

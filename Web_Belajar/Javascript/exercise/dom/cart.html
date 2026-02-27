@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cart</title>
+  <link href="" rel="stylesheet">
+
+  <style>
+    .cartInfo {
+      margin-bottom: 20px;
+    }
+
+    .addCart {
+      margin-bottom: 10px;
+    }
+
+    .removeCart {
+      margin-bottom: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="cart">
+    <p>Cart Quantity</p>
+
+    <div class="cartInfo">
+      <button onclick="showQuantity()">Show Quantity Cart</button>
+      <button onclick="resetQuantity()">Reset Cart</button>
+    </div>
+
+    <p class="js-cartQuantity"></p>
+
+    <div class="addCart">
+      <button onclick="addQuantity(1)">Add to Cart(+1)</button>
+      <button onclick="addQuantity(2)">+2</button>
+      <button onclick="addQuantity(3)">+3</button>
+      <button onclick="addQuantity(4)">+4</button>
+      <button onclick="addQuantity(5)">+5</button>
+    </div>
+
+    <div class="removeCart">
+      <button onclick="removeQuantity(1)">Remove from Cart(-1)</button>
+      <button onclick="removeQuantity(2)">-2</button>
+      <button onclick="removeQuantity(3)">-3</button>
+    </div>
+  </div>
+
+  <a href="dom.html">Back To Main Page</a>
+
+  <script src="scripts/cart.js"></script>
+</body>
+
+</html>

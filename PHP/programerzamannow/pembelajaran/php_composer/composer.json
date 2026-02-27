@@ -1,0 +1,24 @@
+{
+  "name": "gendhiramona/belajar-php-composer",
+  "description": "Belajar PHP Composer",
+  "type": "project",
+  "authors": [
+    {
+      "name": "XDX1O1",
+      "email": "gendhiramona@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Grp\\": "src/"
+    }
+  },
+  "require": {
+    "monolog/monolog": "3.8.1"
+  },
+  "require-dev": {
+  },
+  "scripts": {
+    "run-localserver": "php -S localhost:8080"
+  }
+}

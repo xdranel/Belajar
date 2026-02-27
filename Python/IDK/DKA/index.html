@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Fuzzy Mamdani - Prediksi Kegagalan Startup</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .input-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .input-group {
+            background: linear-gradient(145deg, #f0f4f8, #e2e8f0);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .input-group:hover {
+            transform: translateY(-5px);
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #2d3748;
+            font-size: 1.1em;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: #4facfe;
+            box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.1);
+        }
+
+        .range-info {
+            font-size: 0.9em;
+            color: #718096;
+            margin-top: 5px;
+        }
+
+        .calculate-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2em;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: block;
+            margin: 30px auto;
+            box-shadow: 0 8px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .calculate-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 20px rgba(102, 126, 234, 0.6);
+        }
+
+        .results {
+            display: none;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .result-card {
+            background: linear-gradient(145deg, #ffffff, #f7fafc);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-left: 5px solid #4facfe;
+        }
+
+        .result-card h3 {
+            color: #2d3748;
+            margin-bottom: 20px;
+            font-size: 1.4em;
+        }
+
+        .fuzzy-values {
+            margin-bottom: 20px;
+        }
+
+        .fuzzy-value {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding: 8px 12px;
+            background: rgba(79, 172, 254, 0.1);
+            border-radius: 8px;
+        }
+
+        .final-result {
+            text-align: center;
+            font-size: 2em;
+            font-weight: bold;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .success { 
+            background: linear-gradient(135deg, #48bb78, #38a169);
+            color: white;
+        }
+
+        .warning { 
+            background: linear-gradient(135deg, #ed8936, #dd6b20);
+            color: white;
+        }
+
+        .danger { 
+            background: linear-gradient(135deg, #f56565, #e53e3e);
+            color: white;
+        }
+
+        .explanation {
+            margin-top: 30px;
+            padding: 25px;
+            background: linear-gradient(145deg, #edf2f7, #e2e8f0);
+            border-radius: 15px;
+            line-height: 1.6;
+        }
+
+        .method-info {
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(79, 172, 254, 0.1);
+            border-radius: 10px;
+            border-left: 4px solid #4facfe;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Sistem Fuzzy Mamdani</h1>
+            <p>Prediksi Kegagalan Startup Berbasis Logika Fuzzy</p>
+        </div>
+
+        <div class="content">
+            <div class="method-info">
+                <h3>📊 Tentang Metode Mamdani</h3>
+                <p>Sistem ini menggunakan metode fuzzy Mamdani untuk memprediksi tingkat risiko kegagalan startup berdasarkan 4 faktor utama: usia perusahaan, jumlah pendiri, tingkat pendanaan, dan jumlah karyawan. Setiap variabel input dibagi menjadi kategori fuzzy (Rendah, Sedang, Tinggi) dengan fungsi keanggotaan trapezoidal.</p>
+            </div>
+
+            <div class="input-section">
+                <div class="input-group">
+                    <label for="age">🏢 Usia Perusahaan (tahun)</label>
+                    <input type="number" id="age" min="0" max="20" step="0.1" value="3">
+                    <div class="range-info">Range: 0-20 tahun</div>
+                </div>
+
+                <div class="input-group">
+                    <label for="founders">👥 Jumlah Pendiri</label>
+                    <input type="number" id="founders" min="1" max="10" step="1" value="2">
+                    <div class="range-info">Range: 1-10 orang</div>
+                </div>
+
+                <div class="input-group">
+                    <label for="funding">💰 Tingkat Pendanaan (juta USD)</label>
+                    <input type="number" id="funding" min="0" max="100" step="0.1" value="5">
+                    <div class="range-info">Range: 0-100 juta USD</div>
+                </div>
+
+                <div class="input-group">
+                    <label for="employees">🧑‍💼 Jumlah Karyawan</label>
+                    <input type="number" id="employees" min="1" max="500" step="1" value="15">
+                    <div class="range-info">Range: 1-500 orang</div>
+                </div>
+            </div>
+
+            <button class="calculate-btn" onclick="calculateFuzzy()">🔍 Analisis Risiko Kegagalan</button>
+
+            <div class="results" id="results">
+                <div class="result-card">
+                    <h3>📈 Nilai Keanggotaan Fuzzy</h3>
+                    <div class="fuzzy-values" id="fuzzyValues"></div>
+                </div>
+
+                <div class="result-card">
+                    <h3>🎯 Hasil Prediksi</h3>
+                    <div class="final-result" id="finalResult"></div>
+                    <div id="riskLevel"></div>
+                </div>
+            </div>
+
+            <div class="explanation" id="explanation" style="display: none;"></div>
+        </div>
+    </div>
+
+    <script>
+        // Fungsi keanggotaan trapezoidal
+        function trapezoidalMembership(x, a, b, c, d) {
+            if (x <= a || x >= d) return 0;
+            if (x >= b && x <= c) return 1;
+            if (x < b) return (x - a) / (b - a);
+            return (d - x) / (d - c);
+        }
+
+        // Fungsi keanggotaan untuk setiap variabel
+        function getAgeMembership(age) {
+            return {
+                muda: trapezoidalMembership(age, 0, 0, 2, 5),
+                sedang: trapezoidalMembership(age, 3, 5, 8, 12),
+                tua: trapezoidalMembership(age, 10, 15, 20, 20)
+            };
+        }
+
+        function getFoundersMembership(founders) {
+            return {
+                sedikit: trapezoidalMembership(founders, 1, 1, 2, 3),
+                sedang: trapezoidalMembership(founders, 2, 3, 4, 6),
+                banyak: trapezoidalMembership(founders, 5, 7, 10, 10)
+            };
+        }
+
+        function getFundingMembership(funding) {
+            return {
+                rendah: trapezoidalMembership(funding, 0, 0, 5, 15),
+                sedang: trapezoidalMembership(funding, 10, 20, 40, 60),
+                tinggi: trapezoidalMembership(funding, 50, 70, 100, 100)
+            };
+        }
+
+        function getEmployeesMembership(employees) {
+            return {
+                sedikit: trapezoidalMembership(employees, 1, 1, 10, 25),
+                sedang: trapezoidalMembership(employees, 20, 40, 80, 120),
+                banyak: trapezoidalMembership(employees, 100, 200, 500, 500)
+            };
+        }
+
+        // Aturan fuzzy (simplified rules based on startup success factors)
+        function applyFuzzyRules(age, founders, funding, employees) {
+            const rules = [];
+
+            // Aturan untuk risiko TINGGI
+            rules.push({
+                condition: Math.min(age.muda, founders.sedikit, funding.rendah, employees.sedikit),
+                output: 'tinggi',
+                description: 'Startup muda, pendiri sedikit, funding rendah, karyawan sedikit'
+            });
+
+            rules.push({
+                condition: Math.min(age.tua, funding.rendah, employees.sedikit),
+                output: 'tinggi',
+                description: 'Startup tua tapi funding rendah dan karyawan sedikit'
+            });
+
+            // Aturan untuk risiko SEDANG
+            rules.push({
+                condition: Math.min(age.sedang, founders.sedang, funding.sedang),
+                output: 'sedang',
+                description: 'Kondisi startup rata-rata'
+            });
+
+            rules.push({
+                condition: Math.min(age.muda, funding.tinggi, employees.sedang),
+                output: 'sedang',
+                description: 'Startup muda dengan funding baik'
+            });
+
+            // Aturan untuk risiko RENDAH
+            rules.push({
+                condition: Math.min(age.sedang, founders.banyak, funding.tinggi, employees.banyak),
+                output: 'rendah',
+                description: 'Startup mapan dengan tim dan funding kuat'
+            });
+
+            rules.push({
+                condition: Math.min(funding.tinggi, employees.banyak),
+                output: 'rendah',
+                description: 'Funding tinggi dan banyak karyawan'
+            });
+
+            return rules.filter(rule => rule.condition > 0);
+        }
+
+        // Defuzzifikasi menggunakan metode centroid
+        function defuzzify(activeRules) {
+            const riskLevels = { rendah: 20, sedang: 50, tinggi: 80 };
+            let numerator = 0;
+            let denominator = 0;
+
+            activeRules.forEach(rule => {
+                const riskValue = riskLevels[rule.output];
+                numerator += rule.condition * riskValue;
+                denominator += rule.condition;
+            });
+
+            return denominator > 0 ? numerator / denominator : 50;
+        }
+
+        function calculateFuzzy() {
+            const age = parseFloat(document.getElementById('age').value);
+            const founders = parseInt(document.getElementById('founders').value);
+            const funding = parseFloat(document.getElementById('funding').value);
+            const employees = parseInt(document.getElementById('employees').value);
+
+            // Hitung nilai keanggotaan
+            const ageMembership = getAgeMembership(age);
+            const foundersMembership = getFoundersMembership(founders);
+            const fundingMembership = getFundingMembership(funding);
+            const employeesMembership = getEmployeesMembership(employees);
+
+            // Terapkan aturan fuzzy
+            const activeRules = applyFuzzyRules(ageMembership, foundersMembership, fundingMembership, employeesMembership);
+
+            // Defuzzifikasi
+            const riskScore = defuzzify(activeRules);
+
+            // Tampilkan hasil
+            displayResults(ageMembership, foundersMembership, fundingMembership, employeesMembership, activeRules, riskScore);
+        }
+
+        function displayResults(age, founders, funding, employees, rules, riskScore) {
+            // Tampilkan nilai keanggotaan
+            const fuzzyValuesDiv = document.getElementById('fuzzyValues');
+            fuzzyValuesDiv.innerHTML = `
+                <h4>Usia Perusahaan:</h4>
+                <div class="fuzzy-value"><span>Muda:</span><span>${age.muda.toFixed(3)}</span></div>
+                <div class="fuzzy-value"><span>Sedang:</span><span>${age.sedang.toFixed(3)}</span></div>
+                <div class="fuzzy-value"><span>Tua:</span><span>${age.tua.toFixed(3)}</span></div>
+                
+                <h4>Jumlah Pendiri:</h4>
+                <div class="fuzzy-value"><span>Sedikit:</span><span>${founders.sedikit.toFixed(3)}</span></div>
+                <div class="fuzzy-value"><span>Sedang:</span><span>${founders.sedang.toFixed(3)}</span></div>
+                <div class="fuzzy-value"><span>Banyak:</span><span>${founders.banyak.toFixed(3)}</span></div>
+                
+                <h4>Tingkat Pendanaan:</h4>
+                <div class="fuzzy-value"><span>Rendah:</span><span>${funding.rendah.toFixed(3)}</span></div>
+                <div class="fuzzy-value"><span>Sedang:</span><span>${funding.sedang.toFixed(3)}</span></div>
+                <div class="fuzzy-value"><span>Tinggi:</span><span>${funding.tinggi.toFixed(3)}</span></div>
+                
+                <h4>Jumlah Karyawan:</h4>
+                <div class="fuzzy-value"><span>Sedikit:</span><span>${employees.sedikit.toFixed(3)}</span></div>
+                <div class="fuzzy-value"><span>Sedang:</span><span>${employees.sedang.toFixed(3)}</span></div>
+                <div class="fuzzy-value"><span>Banyak:</span><span>${employees.banyak.toFixed(3)}</span></div>
+            `;
+
+            // Tampilkan hasil akhir
+            const finalResultDiv = document.getElementById('finalResult');
+            const riskLevelDiv = document.getElementById('riskLevel');
+            
+            let riskClass, riskText, riskEmoji;
+            if (riskScore <= 35) {
+                riskClass = 'success';
+                riskText = 'RISIKO RENDAH';
+                riskEmoji = '✅';
+            } else if (riskScore <= 65) {
+                riskClass = 'warning';
+                riskText = 'RISIKO SEDANG';
+                riskEmoji = '⚠️';
+            } else {
+                riskClass = 'danger';
+                riskText = 'RISIKO TINGGI';
+                riskEmoji = '🚨';
+            }
+
+            finalResultDiv.className = `final-result ${riskClass}`;
+            finalResultDiv.innerHTML = `${riskEmoji} ${riskText}`;
+            riskLevelDiv.innerHTML = `<strong>Skor Risiko: ${riskScore.toFixed(1)}/100</strong>`;
+
+            // Tampilkan penjelasan
+            const explanationDiv = document.getElementById('explanation');
+            let rulesExplanation = rules.map(rule => 
+                `• ${rule.description} (kekuatan: ${rule.condition.toFixed(3)})`
+            ).join('<br>');
+
+            explanationDiv.innerHTML = `
+                <h3>📋 Analisis Detail</h3>
+                <p><strong>Aturan yang Aktif:</strong></p>
+                <p>${rulesExplanation}</p>
+                <p><strong>Interpretasi:</strong> ${getInterpretation(riskScore, rules)}</p>
+            `;
+
+            // Tampilkan hasil
+            document.getElementById('results').style.display = 'grid';
+            explanationDiv.style.display = 'block';
+        }
+
+        function getInterpretation(score, rules) {
+            if (score <= 35) {
+                return "Startup ini memiliki profil risiko yang baik dengan indikator positif seperti pendanaan yang memadai atau tim yang solid. Peluang sukses relatif tinggi.";
+            } else if (score <= 65) {
+                return "Startup ini berada dalam zona risiko moderat. Ada beberapa faktor yang perlu diperhatikan dan diperbaiki untuk meningkatkan peluang sukses.";
+            } else {
+                return "Startup ini memiliki profil risiko tinggi dengan beberapa indikator yang mengkhawatirkan. Diperlukan strategi yang kuat dan perubahan signifikan untuk meningkatkan peluang sukses.";
+            }
+        }
+
+        // Inisialisasi dengan perhitungan awal
+        calculateFuzzy();
+    </script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+  .req-but {
+    background-color: black;
+    border: none;
+    color: white;
+    height: 30px;
+    width: 110px;
+    cursor: pointer;
+    margin-right: 7px;
+    transition: opacity 0.15s;
+  }
+  .req-but:hover {
+    opacity: 0.7;
+  }
+  .req-but:active {
+    opacity: 0.5;
+  }
+
+  .add-but {
+    background-color: rgb(255, 225, 20);
+    border: none;
+    border-radius: 15px;
+    color: black;
+    height: 30px;
+    width: 150px;
+    cursor: pointer;
+    margin-right: 7px;
+    transition: 
+      opacity 0.15s,
+      background-color 0.15s;
+  }
+  .add-but:hover {
+    background-color: rgb(255, 210, 20);
+  }
+  .add-but:active {
+    opacity: 0.5;
+  }
+
+  .sign-but {
+    background-color: rgb(0, 170, 80);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    height: 30px;
+    width: 85px;
+    cursor: pointer;
+    transition: 
+      opacity 0.15s,
+      background-color 0.15s,
+      box-shadow 0.15s;
+  }
+  .sign-but:hover {
+    background-color: rgb(0, 170, 70);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+  }
+  .sign-but:active {
+    opacity: 0.5;
+  }
+
+  .get-but {
+    background-color: rgb(120, 82, 179);
+    border: none;
+    border-radius: 3px;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    height: 40px;
+    width: 110px;
+    cursor: pointer;
+    margin-right: 7px;
+    transition: 
+      opacity 0.15s,
+      background-color 0.15s;
+  }
+  .get-but:hover {
+    background-color: rgb(100, 41, 179);
+  }
+  .get-but:active {
+    opacity: 0.5;
+  }
+
+  .down-but {
+    background-color: white;
+    border-color: rgb(108, 117, 125);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 2px;
+    color: rgb(108, 117, 125);
+    font-weight: bold;
+    font-size: 14px;
+    height: 40px;
+    width: 100px;
+    cursor: pointer;
+    margin-right: 7px;
+    transition: 
+      opacity 0.15s,
+      color 0.15s,
+      background-color 0.15s;
+  }
+  .down-but:hover {
+    color: white;
+    background-color: rgb(108, 117, 100);
+  }
+  .down-but:active {
+    opacity: 0.5;
+  }
+
+  .app-but {
+    background-color: rgb(10, 102, 194);
+    border: none;
+    border-radius: 15px;
+    color: white;
+    height: 30px;
+    width: 210px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    margin-right: 7px;
+    transition: 
+      opacity 0.15s,
+      background-color 0.15s;
+  }
+  .app-but:hover {
+    background-color: rgb(10, 56, 194);
+  }
+  .app-but:active {
+    opacity: 0.5;
+  }
+
+  .save-but {
+    background-color: white;
+    border-radius: 15px;
+    border-width: 0.5px;
+    border-style: solid;
+    border-color: rgb(10, 102, 194);
+    color: rgb(10, 102, 194);
+    height: 30px;
+    width: 70px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .save-but:hover {
+    background-color: rgb(10, 170, 194);
+    border-width: 1.5px;
+  }
+
+  .google-link {
+    color: rgb(0, 113, 113);
+  }
+  .google-link:hover {
+    color: rgb(255, 0, 0);
+  }
+
+  .nike-text {
+    font-weight: bold; 
+    font-size: 20px;
+  }
+
+  .stock-text {
+    color: rgb(0, 118, 0);
+    font-weight: bold;
+  }
+
+  .cart-but {
+    background-color: rgb(255, 225, 20);
+    border: none;
+    border-radius: 25px;
+    height: 35px;
+    width: 120px;
+    cursor: pointer;
+    margin-right: 7px;
+    transition: 
+      opacity 0.15s,
+      background-color 0.15s;
+  }
+  .cart-but:hover {
+    background-color: rgb(255, 190, 20); 
+  }
+  .cart-but:active {
+    opacity: 0.5;
+  }
+
+  .buy-but {
+    background-color: rgb(255, 164, 28);
+    border: none;
+    border-radius: 25px;
+    height: 35px;
+    width: 125px;
+    cursor: pointer;
+    transition: 
+      opacity 0.15s,
+      background-color 0.15s;
+  }
+  .buy-but:hover {
+    background-color: rgb(255, 135, 28);
+  }
+  .buy-but:active {
+    opacity: 0.5;
+  }

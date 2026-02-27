@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rock Paper Scissors</title>
+    <link href="css/ropes.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="sec-rps">
+      <p class="title-rps" s>Rock Paper Scissors</p>
+
+      <div class="sec-rpsButton">
+        <button class="js-rockButton rockButton">
+          <img class="moveIcon" src="images/rock-emoji.png" />
+        </button>
+        <button class="js-paperButton paperButton">
+          <img class="moveIcon" src="images/paper-emoji.png" />
+        </button>
+        <button class="js-scissorsButton scissorsButton">
+          <img class="moveIcon" src="images/scissors-emoji.png" />
+        </button>
+      </div>
+
+      <div class="sec-infoStats">
+        <p class="js-rpsResult rpsResult"></p>
+        <p class="js-rpsMove rpsMove"></p>
+        <p class="js-rpsScore rpsScore"></p>
+      </div>
+
+      <div class="sec-botButton">
+        <button class="js-resetButton resetButton">Reset Score</button>
+        <button class="js-autoPlayButton autoPlayButton">Auto Play</button>
+      </div>
+    </div>
+
+    <script src="scripts/ropes.js"></script>
+  </body>
+</html>

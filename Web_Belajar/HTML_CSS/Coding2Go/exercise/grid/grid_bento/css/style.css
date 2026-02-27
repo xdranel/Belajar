@@ -1,0 +1,27 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body {
+  min-height: 800px;
+  border: 8px solid black;
+  display: grid;
+  grid-template-columns: 250px 250px 250px;
+  grid-template-rows: 250px 250px;
+  gap: 10px;
+}
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: blue;
+  font-size: 40pt;
+}
+#box-1 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+#box-4 {
+  grid-column-start: 2;
+  grid-column-end: 4;
+}

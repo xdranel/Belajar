@@ -1,0 +1,13 @@
+{
+  "id": "1",
+  "name": "John",
+  "hobbies": [
+    "music",
+    "movies"
+  ],
+  "address": {
+    "street": "123 Main St",
+    "city": "New York",
+    "country": "USA"
+  }
+}

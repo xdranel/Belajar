@@ -1,0 +1,44 @@
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
+
+    <persistence-unit name="BELAJAR">
+
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <!-- entity Classes -->
+        <class>gendhiramona.jpa.entity.Customer</class>
+        <class>gendhiramona.jpa.entity.Category</class>
+        <class>gendhiramona.jpa.entity.Image</class>
+        <class>gendhiramona.jpa.entity.Member</class>
+        <class>gendhiramona.jpa.entity.Department</class>
+        <class>gendhiramona.jpa.entity.User</class>
+        <class>gendhiramona.jpa.entity.Credential</class>
+        <class>gendhiramona.jpa.entity.Wallet</class>
+        <class>gendhiramona.jpa.entity.Product</class>
+        <class>gendhiramona.jpa.entity.Brand</class>
+        <class>gendhiramona.jpa.entity.Department</class>
+        <class>gendhiramona.jpa.entity.Employee</class>
+        <class>gendhiramona.jpa.entity.Manager</class>
+        <class>gendhiramona.jpa.entity.VicePresident</class>
+        <class>gendhiramona.jpa.entity.Payment</class>
+        <class>gendhiramona.jpa.entity.PaymentCreditCard</class>
+        <class>gendhiramona.jpa.entity.PaymentGoPay</class>
+        <class>gendhiramona.jpa.entity.Transaction</class>
+        <class>gendhiramona.jpa.entity.TransactionCredit</class>
+        <class>gendhiramona.jpa.entity.TransactionDebit</class>
+
+        <properties>
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="jakarta.persistence.jdbc.url"
+                      value="jdbc:mysql://localhost:3306/belajar_java_persistence_api"/>
+            <property name="jakarta.persistence.jdbc.user" value="root"/>
+            <property name="jakarta.persistence.jdbc.password" value="plm987!"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+        </properties>
+    </persistence-unit>
+
+</persistence>

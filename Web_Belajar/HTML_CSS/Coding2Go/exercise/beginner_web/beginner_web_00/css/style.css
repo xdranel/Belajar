@@ -1,0 +1,102 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    align-content: center;
+    box-sizing: border-box;
+    background-color: #62dfff;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+
+}
+
+a:hover {
+    color: blue;
+}
+
+a:visited {
+    color: black;
+}
+
+p {
+    margin: 1vh 7.5vh;
+    font-size: 0.75rem;
+}
+
+.registerSection {
+    width: 25vw;
+    height: 45vh;
+    margin: 0 auto;
+
+    border-radius: 15px;
+
+    background-color: white;
+}
+
+.registerSection h2 {
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+}
+
+.registerContainer {
+    margin-top: 3vh;
+    margin-bottom: 5vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+
+    font-size: 1.3rem;
+}
+
+.registerContainer input {
+    margin: 0 30px;
+    padding: 10px;
+
+    border: 1px solid grey;
+    border-radius: 10px;
+    outline: none;
+}
+
+.registerContainer input:focus {
+    border: none;
+    outline: 1px solid red;
+}
+
+.registerLabel {
+    margin: 0 30px;
+    padding: 0;
+    /*background-color: orange;*/
+}
+
+
+.registerButton {
+    width: 70%;
+    height: 50px;
+    display: block;
+    margin: 0 auto;
+
+    border: 1px solid grey;
+    border-radius: 10px;
+
+    font-size: 1.2rem;
+    font-weight: bold;
+
+    background-color: white;
+
+    transition: 150ms;
+}
+.registerButton:hover {
+    border: none;
+    background-color: #63cdff;
+    color: white;
+}
+
+

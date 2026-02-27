@@ -1,0 +1,150 @@
+body {
+  margin-bottom: 1000px;
+}
+
+.info-box {
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(210, 210, 210);
+  border-radius: 5px;
+  width: 300px;
+  font-family: Arial;
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+  margin-bottom: 200px;
+}
+
+.info-style {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 15px;
+}
+
+.home,
+.notifications,
+.messages {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.home {
+  margin-bottom: 15px;
+}
+.messages {
+  margin-top: 15px;
+}
+.counter {
+  background-color: rgb(0, 50, 255);
+  color: white;
+  border-radius: 13px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.recommended-friendbox {
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(210, 210, 210);
+  border-radius: 5px;
+  width: 400px;
+  font-family: Arial;
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+  margin-bottom: 30px;
+}
+
+.all-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.profile-picture {
+  margin-right: 20px;
+}
+.picture {
+  border-radius: 30px;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.profile-info {
+  width: 250px;
+  font-size: 14px;
+  line-height: 7px;
+}
+.name {
+  font-weight: bold;
+}
+.alias,
+.user-info {
+  color: rgb(130, 130, 130);
+}
+
+.follow-but {
+  font-weight: bold;
+  font-size: 14px;
+  background-color: rgb(0, 120, 255);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.nav-topbar {
+  background-color: rgb(120, 0, 255);
+  font-family: Arial;
+}
+.three-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 13px;
+  padding-right: 13px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  align-items: center;
+}
+
+.link-home,
+.link-profile {
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+.link-home {
+  margin-right: 10px;
+}
+
+.search-bar {
+  width: 800px;
+  border-radius: 20px;
+  border: none;
+  padding-left: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.down-but {
+  background-color: rgb(120, 0, 255);
+  color: white;
+  border-style: solid;
+  border-width: 1px;
+  border-color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+.down-but:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}

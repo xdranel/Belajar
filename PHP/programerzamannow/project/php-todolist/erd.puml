@@ -1,0 +1,11 @@
+@startuml
+
+entity "User" as user {
+user_id VARCHAR(255) PK
+--
+email
+password
+todo
+}
+
+@enduml

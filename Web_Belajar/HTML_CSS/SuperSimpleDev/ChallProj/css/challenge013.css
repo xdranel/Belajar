@@ -1,0 +1,183 @@
+.test-satu {
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 100px;
+}
+
+.test-satu-a {
+  background-color: lightblue;
+  width: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.test-satu-b {
+  background-color: lightpink;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.test-text-row1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.test-text-row2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.text-row2 {
+  color: white;
+  background-color: black;
+  display: flex;
+}
+
+.inbox-page {
+  font-family: Arial;
+  font-size: 14px;
+  width: fit-content;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  margin-bottom: 300px;
+}
+
+.inbox-place {
+  margin-left: 15px;
+  margin-right: 15px;
+  padding-bottom: 20px;
+}
+
+.inbox-section {
+  padding-top: 10px;
+  display: block;
+  color: rgb(128, 128, 128);
+  font-weight: bold;
+}
+
+.inbox-info {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+.user-picture {
+  margin-right: 10px;
+}
+.picture {
+  border-radius: 25px;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.origin-x-time {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+.origin-massages {
+  font-weight: bold;
+}
+.time {
+  color: rgb(128, 128, 128);
+  font-weight: bold;
+}
+.subject {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.massages {
+  color: rgb(128, 128, 128);
+}
+
+.tweet-page {
+  font-family: Arial;
+  font-size: 14px;
+  width: fit-content;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  margin-bottom: 300px;
+}
+
+.tweet-place {
+  margin-left: 15px;
+  margin-right: 15px;
+  padding-top: 15px;
+  padding-bottom: 20px;
+}
+
+.tweet-info {
+  display: flex;
+  flex-direction: row;
+}
+
+.tweet-user-picture {
+  margin-right: 10px;
+}
+.tweet-picture {
+  border-radius: 25px;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.name-x-massages {
+  width: 300px;
+}
+
+.name-username {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 5px;
+}
+.name {
+  font-weight: bold;
+  margin-right: 5px;
+}
+.username {
+  color: rgb(102, 102, 102);
+}
+
+.tweet-massages {
+  margin-bottom: 10px;
+}
+
+.atrribute {
+  height: 80px;
+  width: 300px;
+  display: flex;
+  flex-direction: row;
+  border-width: 1px;
+  border-radius: 20px;
+  border-style: solid;
+  border-color: rgb(230, 230, 230);
+}
+.thumbnail {
+  background-color: rgb(230, 230, 230);
+  border-width: 1px;
+  border-style: solid;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-color: rgb(230, 230, 230);
+  width: 100px;
+}
+
+.link-x-title {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.link {
+  display: block;
+  color: rgb(102, 102, 102);
+  margin-bottom: 5px;
+}
+.title {
+  display: block;
+}

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rock Paper Scissors</title>
+    <link href="css/ropes.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="sec-rps">
+      <p class="title-rps" s>Rock Paper Scissors</p>
+
+      <div class="sec-rpsButton">
+        <button class="rockButton" onclick="playGame('rock')">
+          <img class="moveIcon" src="images/rock-emoji.png" />
+        </button>
+        <button class="paperButton" onclick="playGame('paper')">
+          <img class="moveIcon" src="images/paper-emoji.png" />
+        </button>
+        <button class="scissorsButton" onclick="playGame('scissors')">
+          <img class="moveIcon" src="images/scissors-emoji.png" />
+        </button>
+      </div>
+
+      <div class="sec-infoStats">
+        <p class="js-rpsResult rpsResult"></p>
+        <p class="js-rpsMove rpsMove"></p>
+        <p class="js-rpsScore rpsScore"></p>
+      </div>
+
+      <div class="sec-reset">
+        <button class="resetButton" onclick="resetGame()">Reset Score</button>
+      </div>
+    </div>
+
+    <a href="dom.html">Back To Main Page</a>
+
+    <script src="scripts/ropes.js"></script>
+  </body>
+</html>

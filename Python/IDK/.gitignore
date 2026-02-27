@@ -1,0 +1,6 @@
+# Ignore Folder
+**/venv
+
+
+# Ignore File
+dummy.txt

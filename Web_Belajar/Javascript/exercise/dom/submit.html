@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Test Submit</title>
+  <link href="" rel="stylesheet">
+  <style>
+    .sec-submit {
+      margin-bottom: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="sec-submit">
+    <input class="js-inputName" placeholder="Enter your name" onkeydown="handleKeydown()">
+    <button onclick="displayName()">Submit</button>
+    <p class="js-showName"></p>
+  </div>
+
+  <input class="js-inputText" placeholder="Enter Text" onkeyup="handleKeyup()">
+  <p class="js-showText"></p>
+
+  <script>
+    let inputName = document.querySelector('.js-inputName');
+    let nameElement = document.querySelector('.js-showName');
+
+    function displayName() {
+      nameElement.innerText = `Your name is ${inputName.value}`;
+    }
+
+    function handleKeydown() {
+      if (event.key === 'Enter') {
+        displayName();
+      }
+    }
+  </script>
+
+  <script>
+    let inputText = document.querySelector('.js-inputText');
+    let textElement = document.querySelector('.js-showText');
+
+    function handleKeyup() {
+      textElement.innerText = inputText.value;
+    }
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body {
+  min-height: 800px;
+  border: 8px solid black;
+  display: grid;
+  grid-auto-columns: 300px;
+  grid-auto-flow: column;
+  gap: 10px;
+}
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: blue;
+  font-size: 40pt;
+}
