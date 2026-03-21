@@ -4,6 +4,8 @@ import "fmt"
 
 func main() {
 	name := "John"
+	var x int
+	y := "hi"
 
 	switch name {
 	case "John":

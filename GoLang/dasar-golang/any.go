@@ -5,7 +5,6 @@ import (
 	"reflect"
 )
 
-func main() {
 	var data any
 
 	data = "Hello, Go!"
