@@ -1,0 +1,163 @@
+\documentclass[12pt, a4paper]{article}
+
+% ─── Packages ────────────────────────────────────────────────────────────────
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}          % Math environments
+\usepackage{amssymb}          % Math symbols
+\usepackage{graphicx}         % Images
+\usepackage{hyperref}         % Clickable links
+\usepackage{geometry}         % Page margins
+\usepackage{listings}         % Code blocks
+\usepackage{xcolor}           % Colors
+\usepackage{booktabs}         % Better tables
+\usepackage{enumitem}         % Better lists
+
+\geometry{margin=2.5cm}
+
+% ─── Document Info ────────────────────────────────────────────────────────────
+\title{\textbf{VimTeX Test Document} \\ \large A Full Feature Tour}
+\author{Your Name}
+\date{\today}
+
+% ─── Code Style ───────────────────────────────────────────────────────────────
+\lstset{
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{blue}\bfseries,
+  commentstyle=\color{gray},
+  stringstyle=\color{orange},
+  backgroundcolor=\color{gray!10},
+  frame=single,
+  breaklines=true,
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+}
+
+% ══════════════════════════════════════════════════════════════════════════════
+\begin{document}
+% ══════════════════════════════════════════════════════════════════════════════
+
+\maketitle
+\tableofcontents
+\newpage
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Introduction}
+% ─────────────────────────────────────────────────────────────────────────────
+
+Welcome to this \textbf{VimTeX} test document. This file covers the most
+common \LaTeX{} features so you can verify your setup works end-to-end:
+compilation, PDF preview, and live reloading.
+
+This document was compiled with \texttt{latexmk} and viewed in
+\texttt{Zathura} (or your configured viewer).
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Math}
+\label{sec:math}
+% ─────────────────────────────────────────────────────────────────────────────
+
+\subsection{Inline Math}
+
+Einstein's famous equation is $E = mc^2$, and the quadratic formula is
+$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$.
+
+\subsection{Display Math}
+
+The Gaussian integral:
+\[
+  \int_{-\infty}^{\infty} e^{-x^2} \, dx = \sqrt{\pi}
+\]
+
+Maxwell's equations in differential form:
+\begin{align}
+  \nabla \cdot \mathbf{E}  &= \frac{\rho}{\varepsilon_0} \\
+  \nabla \cdot \mathbf{B}  &= 0 \\
+  \nabla \times \mathbf{E} &= -\frac{\partial \mathbf{B}}{\partial t} \\
+  \nabla \times \mathbf{B} &= \mu_0 \mathbf{J}
+                             + \mu_0 \varepsilon_0 \frac{\partial \mathbf{E}}{\partial t}
+\end{align}
+
+\subsection{Theorem Environment}
+
+\textbf{Theorem (Pythagorean):} For a right triangle with legs $a$, $b$
+and hypotenuse $c$:
+\[
+  a^2 + b^2 = c^2
+\]
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Text Formatting}
+% ─────────────────────────────────────────────────────────────────────────────
+
+\begin{itemize}
+  \item \textbf{Bold text} for emphasis
+  \item \textit{Italic text} for titles or terms
+  \item \underline{Underlined text}
+  \item \texttt{Monospace} for code or filenames
+  \item \textcolor{blue}{Colored text} using \texttt{xcolor}
+\end{itemize}
+
+\begin{enumerate}[label=\arabic*.]
+  \item First ordered item
+  \item Second ordered item
+  \item Third ordered item
+\end{enumerate}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Tables}
+% ─────────────────────────────────────────────────────────────────────────────
+
+\begin{table}[h!]
+  \centering
+  \caption{A sample comparison table}
+  \begin{tabular}{@{} l c c r @{}}
+    \toprule
+    \textbf{Tool}   & \textbf{Language} & \textbf{Speed} & \textbf{Stars} \\
+    \midrule
+    Neovim          & C / Lua           & Fast           & 80k+           \\
+    VimTeX          & Vim Script        & Fast           & 5k+            \\
+    latexmk         & Perl              & Medium         & ---            \\
+    Zathura         & C                 & Very Fast      & 3k+            \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Code Listing}
+% ─────────────────────────────────────────────────────────────────────────────
+
+\begin{lstlisting}[language=Python, caption={A simple Python example}]
+def fibonacci(n: int) -> list[int]:
+    """Return the first n Fibonacci numbers."""
+    seq = [0, 1]
+    for i in range(2, n):
+        seq.append(seq[-1] + seq[-2])
+    return seq[:n]
+
+print(fibonacci(10))
+# [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+\end{lstlisting}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{References \& Links}
+% ─────────────────────────────────────────────────────────────────────────────
+
+You can label sections and refer back to them. For example, see
+Section~\ref{sec:math} for the math examples.
+
+\begin{thebibliography}{9}
+  \bibitem{vimtex}
+    Karl Yngve Lervåg,
+    \textit{VimTeX: A modern Vim and Neovim filetype plugin for LaTeX files}.
+    \url{https://github.com/lervag/vimtex}
+
+  \bibitem{latexmk}
+    John Collins,
+    \textit{latexmk: Fully automated LaTeX document generation},
+    \url{https://ctan.org/pkg/latexmk}
+\end{thebibliography}
+
+% ══════════════════════════════════════════════════════════════════════════════
+\end{document}
+% ══════════════════════════════════════════════════════════════════════════════
