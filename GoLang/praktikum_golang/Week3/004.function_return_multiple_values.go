@@ -10,6 +10,6 @@ func main() {
 	firstName, lastName := getFullName("1203")
 	fmt.Println(firstName, lastName)
 
-	namaPertama, _ := getFullName("1202")
-	fmt.Println(namaPertama)
+	_, namaTerakhir := getFullName("1202")
+	fmt.Println(namaTerakhir)
 }
