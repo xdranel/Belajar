@@ -2,7 +2,7 @@
 # Ignore .env files anywhere in the project
 .env
 .env.local
-.env.*
+# .env.*
 # Ignore folders named .env
 .env/
 
