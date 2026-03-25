@@ -1,17 +1,47 @@
-# Virtual environments
+### --- ENVIRONMENT & SECRETS ---
+# Ignore .env files anywhere in the project
+.env
+.env.local
+.env.*
+# Ignore folders named .env
+.env/
+
+### --- PYTHON ---
 venv/
 skc-venv/
-.env/
-.env
-
-# Python cache
+env/
+ENV/
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+.Python
+.ipynb_checkpoints/
 
-# Large datasets
+### --- PHP / COMPOSER ---
+vendor/
+.phpunit.result.cache
+.phpunit.cache/
+# If you use Laravel or similar
+storage/*.log
+bootstrap/cache/
+
+### --- DATA & ARCHIVES ---
 *.csv
 *.zip
 *.parquet
+*.sql
+*.log
 
-# Jupyter checkpoints
-.ipynb_checkpoints/
+### --- IDE & OS ---
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+### --- NODE / JS (Just in case) ---
+node_modules/
+npm-debug.log*
