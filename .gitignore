@@ -30,7 +30,7 @@ bootstrap/cache/
 *.csv
 *.zip
 *.parquet
-*.sql
+# *.sql
 *.log
 
 ### --- IDE & OS ---
