@@ -1,0 +1,35 @@
+const FORM_KEY = 'hello_form_draft';
+const form = document.getElementById('helloForm');
+
+// Check if form was submitted successfully from backend
+// /*[[${submitted}]]*/ false ? localStorage.removeItem(FORM_KEY) : null;
+const isSubmitted = [[${submitted != null ? submitted : false}]];
+
+if (isSubmitted) {
+    localStorage.removeItem(FORM_KEY);
+}
+
+// 1. Restore saved inputs on page load
+window.addEventListener('DOMContentLoaded', () => {
+    const savedData = JSON.parse(localStorage.getItem(FORM_KEY) || '{}');
+
+    Object.keys(savedData).forEach(fieldId => {
+        const input = document.getElementById(fieldId);
+        // Only fill if backend didn't already supply validation values
+        if (input && !input.value) {
+            input.value = savedData[fieldId];
+        }
+    });
+});
+
+// 2. Save inputs to localStorage dynamically as user types
+form.addEventListener('input', (e) => {
+    const savedData = JSON.parse(localStorage.getItem(FORM_KEY) || '{}');
+    savedData[e.target.id] = e.target.value;
+    localStorage.setItem(FORM_KEY, JSON.stringify(savedData));
+});
+
+// 3. Optional: Clear draft if form submits without validation errors
+form.addEventListener('submit', () => {
+    // Keeps draft temporarily until backend confirms success
+});

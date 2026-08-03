@@ -9,7 +9,7 @@ func main() {
 
 	names[0] = "John"
 	names[1] = "Doe"
-	names[2] = "Domn"
+	names[2] = "Dominic"
 
 	fmt.Println(names)
 	fmt.Println(names[0])

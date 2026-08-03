@@ -4,7 +4,7 @@ import "fmt"
 
 func main() {
 	names := [...]string{
-		"John", "Jane", "Jake", "Daniel", "Felix", "Joko",
+		"John", "Jane", "Jake", "Daniel", "Felix", "Joko", "Alice",
 	}
 
 	slice1 := names[3:6]

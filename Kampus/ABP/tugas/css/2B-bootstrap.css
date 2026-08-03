@@ -1,0 +1,128 @@
+.author-container {
+  margin-top: 20pt;
+}
+
+.author p {
+  margin-left: 10pt;
+}
+
+body {
+  background-color: ghostwhite;
+  margin: 0;
+  padding: 0;
+  height: 200vh;
+}
+
+h1 {
+  font-size: 20pt;
+  margin-left: 10pt;
+  margin-top: 20pt;
+  font-weight: bold;
+}
+
+a {
+  text-decoration-line: unset;
+}
+
+.header-menu-container {
+  /*
+  position: fixed;
+  left: 10pt;
+  right: 10pt;
+   */
+
+  background-color: dodgerblue;
+
+  border-style: none;
+  border-radius: 7px;
+
+  margin: 0 10pt;
+}
+
+.header-menu {
+  display: flex;
+  margin: 10pt 50pt;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+}
+
+.header-menu a {
+  color: white;
+  font-size: 13pt;
+  margin: 0px 10px;
+
+  transition: background-color 0.5s ease-in-out font-size 0.5s ease-in-out;
+}
+
+.header-menu a:hover {
+  background-color: white;
+  color: black;
+  font-size: 15pt;
+  font-weight: bold;
+}
+
+.header-menu p {
+  margin: 0;
+}
+
+.main-card-container {
+  margin: 0;
+  margin-top: 20pt;
+  padding: 0;
+
+  align-content: center;
+}
+
+.card-content {
+  width: 100%;
+  max-width: 150px;
+
+  margin: 0;
+  aspect-ratio: 1 / 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.card-content-1 {
+  background-color: limegreen;
+}
+
+.card-content-2 {
+  background-color: darkorange;
+}
+
+.card-content-3 {
+  background-color: red;
+}
+
+.card-content-4 {
+  background-color: deepskyblue;
+}
+
+.card-content-5 {
+  background-color: orange;
+}
+
+.card-content-6 {
+  background-color: darkseagreen;
+}
+
+
+.icon-card {
+  font-size: 3em;
+  color: white;
+}
+
+.card-content p {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  margin: 0;
+  color: white;
+  font-size: 13pt;
+}

@@ -1,0 +1,19 @@
+/*Separate css on its own file*/
+.error-msg {
+    color: red;
+    font-size: 0.9em;
+}
+
+.field-error {
+    border: 1px solid red;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.success-box {
+    background-color: #e2f0d9;
+    padding: 10px;
+    margin-bottom: 15px;
+}

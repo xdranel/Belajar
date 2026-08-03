@@ -5,10 +5,9 @@ import (
 )
 
 func main() {
-	//
-	//var person map[string]string = map[string]string{}
-	//person["name"] = "Gendhi"
-	//person["address"] = "Prastyo"
+	// var person map[string]string = map[string]string{}
+	// person["name"] = "Gendhi"
+	// person["address"] = "Prastyo"
 
 	person := map[string]string{
 		"name": "",

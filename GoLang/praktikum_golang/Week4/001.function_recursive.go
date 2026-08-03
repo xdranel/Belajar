@@ -12,7 +12,7 @@ func factorialLoop(value int) int {
 }
 
 func factorialRecursive(value int) int {
-	if value == 1 {
+	if value == 1 || value == 0 {
 		return 1
 	} else {
 		return value * factorialRecursive(value-1)
@@ -20,7 +20,9 @@ func factorialRecursive(value int) int {
 }
 
 func main() {
-	fmt.Println(factorialLoop(3))
+	result1 := factorialLoop(3)
+	fmt.Println("Result 1 : ", result1)
 
-	fmt.Println(factorialRecursive(5))
+	result2 := factorialRecursive(3)
+	fmt.Println("Result 2 : ", result2)
 }

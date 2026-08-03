@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}">Title</title>
+    <link th:href="@{/css/hello-form.css}" rel="stylesheet">
+</head>
+<body>
+
+<h2 th:text="${title}">Default Title</h2>
+
+<!-- Success Message Section -->
+<div th:if="${name}" class="success-box">
+    <h3 th:text="${name}">Greeting Result</h3>
+</div>
+
+<!-- Form Section -->
+<form id="helloForm"
+      th:data-submitted="${submitted != null ? submitted : false}"
+      th:action="@{/web/hello}" th:object="${hello}" method="post">
+
+    <!-- Name Field -->
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" th:field="*{name}"
+               th:classappend="${#fields.hasErrors('name')} ? 'field-error' : ''" />
+
+        <!-- Displays validation error for 'name' if present -->
+        <span th:if="${#fields.hasErrors('name')}"
+              th:errors="*{name}"
+              class="error-msg"></span>
+    </div>
+
+    <!-- Age Field -->
+    <div class="form-group">
+        <label for="age">Age:</label>
+        <input type="number" id="age" th:field="*{age}"
+               th:classappend="${#fields.hasErrors('age')} ? 'field-error' : ''" />
+
+        <!-- Displays validation error for 'age' if present -->
+        <span th:if="${#fields.hasErrors('age')}"
+              th:errors="*{age}"
+              class="error-msg"></span>
+    </div>
+
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>

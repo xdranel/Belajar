@@ -10,9 +10,13 @@ func main() {
 	s[0] = 100
 	s[1] = 200
 	s[2] = 300
+
 	fmt.Printf("Slice s: %v, Len: %d, Cap: %d\n", s, len(s), cap(s))
 
 	s = append(s, 400)
+	fmt.Printf("Slice s: %v, Len: %d, Cap: %d\n", s, len(s), cap(s))
+
+	s = append(s, 500)
 	fmt.Printf("After append: %v, Len: %d, Cap: %d\n", s, len(s), cap(s))
 
 	// create a slice from an array (or another slice) using the [low:high] syntax

@@ -6,7 +6,6 @@ class Database
 {
     // Store connections in an array so 'test' and 'prod' don't mix up
     private static array $pdos = [];
-    // Track which one was used last for the transaction methods
     private static string $lastEnv = "test";
 
     public static function getConnection(string $env = "test"): \PDO
@@ -17,7 +16,6 @@ class Database
             require_once __DIR__ . "/../../config/database.php";
             $config = getDatabaseConfig();
 
-            // Adding the Error Mode attribute here is highly recommended for MariaDB
             self::$pdos[$env] = new \PDO(
                 $config['database'][$env]['url'],
                 $config['database'][$env]['username'],

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <p><a href="./001A.HTML_Table.html">Menuju Table</a></p>
+  <p>Nama: Gendhi Ramona Prastyo</p>
+  <p>NIM: 1203230011</p>
+
+  <table>
+    <h1>Data Mahasiswa</h1>
+    <form method="post">
+      <tr>
+        <td>NIM: </td>
+        <td>
+          <input type="text" placeholder="Masukan NIM" required>
+        </td>
+      </tr>
+      <tr>
+        <td>Nama: </td>
+        <td>
+          <input type="text" placeholder="Masukan Nama" required>
+        </td>
+      </tr>
+      <tr>
+        <td>Tanggal Lahir (mm/dd/yyy): </td>
+        <td>
+          <input type="date" required />
+        </td>
+      </tr>
+      <tr>
+        <td>Jenis Kelamin: </td>
+        <td>
+          <input type="radio"> Laki-Laki
+          <input type="radio"> Perempuan
+        </td>
+      </tr>
+      <tr>
+        <td>Alamat Rumah: </td>
+        <td>
+          <textarea rows="1" cols="10"></textarea>
+        </td>
+      </tr>
+      <tr>
+        <td>Tinggal Di: </td>
+        <td>
+          <select>
+            <option>--pilih--</option>
+            <option>Kos/Kontrakan</option>
+            <option>Rumah Saudara</option>
+            <option>Rumah Orangtua</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Pilih 2 Hobi Yang Paling Disukai: </td>
+        <td>
+          <input type="checkbox" name="hobby" value="science"> Science <br>
+          <input type="checkbox" name="hobby" value="science"> Technology <br>
+          <input type="checkbox" name="hobby" value="science"> Art <br>
+          <input type="checkbox" name="hobby" value="science"> Sport <br>
+        </td>
+      </tr>
+
+    </form>
+  </table>
+  <input type="submit" name="submit" value="Submit">
+  <input type="reset" name="reset" value="reset">
+</body>
+
+</html>

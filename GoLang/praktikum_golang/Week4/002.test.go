@@ -13,6 +13,9 @@ func changingValue(c, d *int) {
 	fmt.Println("C = ", c, "D = ", d)
 }
 
+func changeVal(x *int) {
+}
+
 func main() {
 	// var a, b int
 	// fmt.Println("A = ", a, "B = ", b)
@@ -20,9 +23,13 @@ func main() {
 	// fmt.Println(a, " + ", b)
 	// fmt.Println("A = ", a, "B = ", b)
 
-	c := 10
-	d := 5
-	fmt.Println("C = ", c, "D = ", d)
-	changingValue(&c, &d)
-	fmt.Println("C = ", c, "D = ", d)
+	// c := 10
+	// d := 5
+	// fmt.Println("C = ", c, "D = ", d)
+	// changingValue(&c, &d)
+	// fmt.Println("C = ", c, "D = ", d)
+
+	var x int
+
+	changeVal(&x)
 }

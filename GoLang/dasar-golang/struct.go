@@ -12,13 +12,16 @@ func (customer Customer) sayHello(name string) {
 }
 
 func main() {
-	//person := []Customer{
-	//	{"Gendhi", "Surabaya", 30},
-	//}
+	//	person := []Customer{
+	//		{"Gendhi", "Surabaya", 30},
+	//		{"x", "y", 20},
+	//	}
 	//
-	//for i, person := range person {
-	//	fmt.Println(i+1, ":", person)
-	//}
+	//	for i, person := range person {
+	//		fmt.Println(i+1, ":", person)
+	//	}
+
+	// person[0].sayHello("Jake")
 
 	person := Customer{
 		Name:    "Gendhi",
@@ -26,11 +29,20 @@ func main() {
 		Age:     30,
 	}
 
-	people := []Customer{person}
+	orang := Customer{
+		Name:    "Joko",
+		Address: "Surabaya",
+		Age:     30,
+	}
+
+	fmt.Println(person)
+
+	people := []Customer{person, orang}
 
 	for i, person := range people {
 		fmt.Println(i+1, ":", person)
 	}
 
 	person.sayHello("Jake")
+	orang.sayHello("Budi")
 }
