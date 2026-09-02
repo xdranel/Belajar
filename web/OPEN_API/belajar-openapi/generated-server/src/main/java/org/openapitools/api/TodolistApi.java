@@ -36,7 +36,7 @@ import java.util.Map;
 import java.util.Optional;
 import jakarta.annotation.Generated;
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2026-08-22T10:24:41.631048908+07:00[Asia/Jakarta]", comments = "Generator version: 7.24.0")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2026-08-31T09:32:51.718492283+07:00[Asia/Jakarta]", comments = "Generator version: 7.24.0")
 @Validated
 @Tag(name = "Todolist", description = "the Todolist API")
 public interface TodolistApi {

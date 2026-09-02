@@ -2,7 +2,7 @@ import openai
 
 # 1. INISIALISASI (Gunakan API Key kamu di sini)
 # [cite: 12, 13]
-api_key = "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"
+api_key = ""
 client = openai.OpenAI(
     base_url="https://openrouter.ai/api/v1",
     api_key=api_key,

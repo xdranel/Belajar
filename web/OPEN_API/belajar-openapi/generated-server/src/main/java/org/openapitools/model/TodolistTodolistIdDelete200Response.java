@@ -22,7 +22,7 @@ import jakarta.annotation.Generated;
  */
 
 @JsonTypeName("_todolist__todolistId__delete_200_response")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2026-08-22T10:24:41.631048908+07:00[Asia/Jakarta]", comments = "Generator version: 7.24.0")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2026-08-31T09:32:51.718492283+07:00[Asia/Jakarta]", comments = "Generator version: 7.24.0")
 public class TodolistTodolistIdDelete200Response {
 
   @JsonInclude(JsonInclude.Include.NON_NULL)
