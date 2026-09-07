@@ -18,7 +18,7 @@ defineProps({
     <div>
         <label
             :for="label"
-            class="block text-sm font-medium text-slate-700 dark:text-slate-300"
+            class="block text-sm font-medium text-slate-900 dark:text-slate-300"
         >{{ label }}</label>
 
         <div class="relative mt-1 rounded-md">

@@ -6,6 +6,10 @@ import PrimaryBtn from "@/Components/PrimaryBtn.vue";
 import {router, useForm} from "@inertiajs/vue3";
 import ErrorMessages from "@/Components/ErrorMessages.vue";
 import SessionMessages from "@/Components/SessionMessages.vue";
+import {ref} from "vue";
+import Modal from "@/Components/Modal.vue";
+
+const showConfirmModal = ref(false);
 
 const props = defineProps({
     user: Object,
@@ -31,6 +35,12 @@ const submit = () => {
         preserveScroll: true
     })
 }
+
+const closeModal = () => {
+    showConfirmModal.value = false;
+    form.clearErrors();
+    form.reset();
+}
 </script>
 
 <template>
@@ -42,33 +52,40 @@ const submit = () => {
             </p>
         </div>
 
-        <ErrorMessages :errors="form.errors"></ErrorMessages>
-        <form @submit.prevent="submit" class="space-y-6">
+        <PrimaryBtn @click="showConfirmModal = true">Update Profile</PrimaryBtn>
 
-            <InputField
-                label="Name"
-                icon="id-badge"
-                class="w-1/2"
-                v-model="form.name"
-            ></InputField>
+        <Modal :show="showConfirmModal" @close="closeModal">
+            <ErrorMessages :errors="form.errors"></ErrorMessages>
+            <form @submit.prevent="submit" class="space-y-6">
 
-            <InputField
-                label="Email"
-                icon="at"
-                class="w-1/2"
-                v-model="form.email"
-            ></InputField>
+                <InputField
+                    label="Name"
+                    icon="id-badge"
+                    class="w-full"
+                    v-model="form.name"
+                ></InputField>
 
-            <div v-if="user.email_verified_at === null">
-                <SessionMessages :status="status"></SessionMessages>
-                <p>Your email address unverified.
-                    <button @click="resendEmail"
-                            class="text-indigo-500 font-medium underline dark:text-indigo-400 disabled:text-slate-400 disabled:cursor-wait"
-                    >Click here, to send the verification email</button>
-                </p>
-            </div>
+                <InputField
+                    label="Email"
+                    icon="at"
+                    class="w-full"
+                    v-model="form.email"
+                ></InputField>
 
-            <PrimaryBtn :disabled="form.processing">Save</PrimaryBtn>
-        </form>
+                <div v-if="user.email_verified_at === null">
+                    <SessionMessages :status="status"></SessionMessages>
+                    <p>Your email address unverified.
+                        <button @click="resendEmail"
+                                class="text-indigo-500 font-medium underline dark:text-indigo-400 disabled:text-slate-400 disabled:cursor-wait"
+                        >Click here, to send the verification email</button>
+                    </p>
+                </div>
+
+                <div class="flex justify-end items-center gap-3 pt-2">
+                    <PrimaryBtn @click="closeModal">Cancel</PrimaryBtn>
+                    <PrimaryBtn :disabled="form.processing">Save Profile</PrimaryBtn>
+                </div>
+            </form>
+        </Modal>
     </Container>
 </template>
