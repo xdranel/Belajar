@@ -1,3 +1,10 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 @plugin "@tailwindcss/forms";
+
+
+@layer components {
+    .text-link {
+        @apply text-indigo-500
+    }
+}

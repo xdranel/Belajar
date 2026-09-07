@@ -54,7 +54,6 @@ const closeModal = () => {
                     Please enter your password to confirm you would like to permanently delete your account.
                 </p>
             </div>
-:disabled="form.processing
             <ErrorMessages :errors="form.errors"></ErrorMessages>
 
             <form @submit.prevent="submit" class="space-y-4">
@@ -70,7 +69,7 @@ const closeModal = () => {
 
                 <div class="flex justify-end items-center gap-3 pt-2">
                     <PrimaryBtn @click="closeModal">Cancel</PrimaryBtn>
-                    <PrimaryBtn :disabled="form.processing">Confirm Password</PrimaryBtn>
+                    <PrimaryBtn :disabled="form.processing">Confirm Deletion</PrimaryBtn>
                 </div>
             </form>
         </Modal>
