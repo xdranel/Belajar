@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreListingRequest;
 use App\Http\Requests\UpdateListingRequest;
 use App\Models\Listing;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -36,6 +37,8 @@ class ListingController extends Controller
             'listings' => $listings,
             // search props
             'searchTerm' => $request->search,
+            // fixing bugs only show id when 3 filters are applied
+            'filterUser' => $request->user_id ? User::find($request->user_id) : null,
         ]);
     }
 
