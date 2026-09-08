@@ -20,6 +20,7 @@ const search = () => {
     router.get(route('home'), {
         search: form.search,
         user_id: params.user_id,
+        tag: params.tag,
     })
 }
 </script>
@@ -28,8 +29,7 @@ const search = () => {
     <Head title="Latest Listing"></Head>
 
     <div class="flex items-center justify-between mb-4">
-        <div>
-            filters
+        <div class="flex items-center gap-2">
         </div>
 
         <div class="w-1/4">

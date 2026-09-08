@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreListingRequest;
 use App\Http\Requests\UpdateListingRequest;
 use App\Models\Listing;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -15,9 +16,12 @@ class ListingController extends Controller
      */
     public function index(Request $request)
     {
-        $listings = Listing::with('user')
+        $listings = Listing::whereHas('user', function (Builder $query) {
+            $query->where('role', '!=', 'suspended');
+        })->with('user')
             // scoped filters
-            ->filter(request(['search', 'user_id']))
+            ->where('approved', true)
+            ->filter(request(['search', 'user_id', 'tag']))
             ->latest()
             ->paginate(6)
             ->withQueryString();

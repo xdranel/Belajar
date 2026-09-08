@@ -33,15 +33,21 @@ class Listing extends Model
         if ($filters['search'] ?? false) {
             // dd($filters);
             $query->where(function ($query) {
-                $query->where('title', 'like', '%' . request('search') . '%')
+                $query
+                    ->where('title', 'like', '%' . request('search') . '%')
                     ->orWhere('desc', 'like', '%' . request('search') . '%');
             });
         }
 
         if ($filters['user_id'] ?? false) {
-            // dd($filters);
+//             dd($filters);
             $query
                 ->where('user_id', request('user_id'));
+        }
+
+        if ($filters['tag'] ?? false) {
+            $query
+                ->where('tags', 'like', '%' . request('tag') . '%');
         }
     }
 }
