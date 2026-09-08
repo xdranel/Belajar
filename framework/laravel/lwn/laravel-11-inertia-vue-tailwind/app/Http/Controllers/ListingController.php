@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreListingRequest;
 use App\Http\Requests\UpdateListingRequest;
 use App\Models\Listing;
+use Illuminate\Http\Request;
 use Inertia\Inertia;
 
 class ListingController extends Controller
@@ -12,12 +13,25 @@ class ListingController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $listings = Listing::with('user')->latest()->paginate(6);
+        $listings = Listing::with('user')
+            // scoped filters
+            ->filter(request(['search', 'user_id']))
+            ->latest()
+            ->paginate(6)
+            ->withQueryString();
+
+        // can get messy if there are many filters
+//            ->where('title', 'like',  '%' . $request->search . '%')
+//            ->latest()
+//            ->paginate(6)
+//            ->withQueryString();
 
         return Inertia::render('Home', [
             'listings' => $listings,
+            // search props
+            'searchTerm' => $request->search,
         ]);
     }
 
