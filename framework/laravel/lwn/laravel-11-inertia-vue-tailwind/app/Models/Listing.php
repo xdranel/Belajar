@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Listing extends Model
 {
@@ -20,12 +21,12 @@ class Listing extends Model
         'approved',
     ];
 
-    public function user()
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
-    // using "scope" laravel immidiately apply the filter to the query
+    // using "scope" laravel immediately apply the filter to the query
     // that way you can just call filter() and it will automatically apply the filter
     public function scopeFilter($query, array $filters)
     {
@@ -48,6 +49,10 @@ class Listing extends Model
         if ($filters['tag'] ?? false) {
             $query
                 ->where('tags', 'like', '%' . request('tag') . '%');
+        }
+
+        if ($filters['disapproved'] ?? false) {
+            $query->where('approved', false);
         }
     }
 }

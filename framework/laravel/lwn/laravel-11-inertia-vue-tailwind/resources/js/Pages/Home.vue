@@ -13,14 +13,14 @@ const props = defineProps({
     filterUser: Object,
 })
 
+// const username =
+//     params.user_id ? props.listings.data.find(i => i.user.id === Number(params.user_id))?.user.name ?? params.user_id : null;
+// returning name instead of id numb, by also passing filterUser as Object and adding props into ListingController
+const username = props.filterUser?.name ?? null;
+
 const form = useForm({
     search: props.searchTerm,
 })
-
-// const username =
-//     params.user_id ? (props.listings.data.find(i => i.user.id === Number(params.user_id))?.user.name ?? params.user_id) : null;
-// returning name instead of id numb, by also passing filterUser as Object and adding props into ListingController
-const username = props.filterUser?.name ?? null;
 
 const search = () => {
     router.get(route('home'), {
@@ -58,7 +58,7 @@ const search = () => {
             </Link>
         </div>
 
-        <div class="w-1/5">
+        <div class="w-1/4">
             <form @submit.prevent="search">
                 <InputField
                     type="search"

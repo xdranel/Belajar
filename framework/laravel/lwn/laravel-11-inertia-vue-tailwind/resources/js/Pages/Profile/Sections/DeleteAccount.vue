@@ -49,7 +49,9 @@ const closeModal = () => {
 
         <Modal :show="showConfirmModal" @close="closeModal">
             <div class="space-y-4 text-left">
-                <h3 class="text-lg font-medium text-gray-900 dark:text-white">Are you sure you want to delete your account?</h3>
+                <h3 class="text-lg font-medium text-gray-900 dark:text-white">
+                    Are you sure you want to delete your account?
+                </h3>
                 <p class="text-sm text-gray-600 dark:text-gray-400 mt-1 mb-4">
                     Please enter your password to confirm you would like to permanently delete your account.
                 </p>
